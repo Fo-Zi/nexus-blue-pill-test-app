@@ -1,0 +1,9 @@
+manifest:
+  projects:
+    - name: hal-interface
+      url: https://github.com/Fo-Zi/nexus-hal-interface
+      revision: v0.5.0
+      path: hal-interface
+
+  self:
+    west-commands: hal-interface/scripts/west-commands.yml
