@@ -6,4 +6,4 @@ manifest:
       path: hal-interface
 
   self:
-    west-commands: hal-interface/scripts
+    west-commands: ../hal-interface/scripts/west-commands.yml
