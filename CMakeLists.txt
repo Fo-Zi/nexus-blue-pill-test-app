@@ -28,11 +28,14 @@ add_executable(blue_pill_test_app ${SOURCES})
 # Include directories
 target_include_directories(blue_pill_test_app PRIVATE ${INCLUDE_DIRS})
 
-# Link with STM32F103 HAL library
-target_link_libraries(blue_pill_test_app nexus-llhal-stm32f103)
-
 # Add nexus-llhal-stm32f103 as a dependency
 add_subdirectory(../nexus-llhal-stm32f103 nexus-llhal-stm32f103)
+target_link_options(nexus-llhal-stm32f103 PUBLIC
+    -mcpu=cortex-m3
+    -mthumb
+    -mfloat-abi=soft
+)
+target_link_libraries(blue_pill_test_app nexus-llhal-stm32f103)
 
 # Compiler flags for STM32F103
 target_compile_definitions(blue_pill_test_app PRIVATE
